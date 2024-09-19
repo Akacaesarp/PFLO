@@ -906,12 +906,12 @@ def parse_model(d, ch, verbose=True):  # model_dict, input_channels(3)
             if m in (BottleneckCSP, C1, C2, C2f, C2fAttn, C3, C3TR, C3Ghost, C3x, RepC3,):
                 args.insert(2, n)  # number of repeats
                 n = 1
-        #---------------------------------------注意力机制------------------------
+        #---------------------------------------attn------------------------
         elif m in {
                     SELayerV2, Dy_Sample, MultiSEAM, SEAM,}:
             c2 = ch[f]
             args = [c2, *args]
-        # ---------------------------------------注意力机制-----------------------
+        # ---------------------------------------attn-----------------------
 
 
         elif m is AIFI:

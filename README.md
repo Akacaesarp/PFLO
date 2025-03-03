@@ -34,7 +34,7 @@ maize pose dataset
 # Start training# Start training
 python train.py --data dataset/Maize_pose.yaml --batch 4 --epochs 130 --img 1280 --device 0
 ```
-or you can just run
+or you can just run train.py：
 ```bash
 
 from ultralytics import YOLO
@@ -54,4 +54,17 @@ python predict.py --weights weights/PFLO.pt --source /path/to/image.jpg --save-t
 
 # Run inference on a directory of images
 python predict.py --weights weights/PFLO.pt --source /path/to/image/folder --save-txt --save-conf
+```
+or you can just run predict.py
+```bash
+from ultralytics import YOLO
+if __name__ == '__main__':
+    model = YOLO('PFLO.pt')
+    result=model.predict(R"test_images", 
+                save = True,
+                show_boxes=False,
+                show_labels=False,
+                project='EXP1',
+                name='R1'
+                )
 ```

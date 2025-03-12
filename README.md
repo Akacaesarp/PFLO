@@ -4,6 +4,25 @@ PFLO is a high-throughput pose estimation model for field maize based on the YOL
 
 The dataset in this study can be accessed at: http://phenomics.agis.org.cn/#/category.
 
+In the MIPDB database, annotations and images are stored in JSON format. You need to use data_preprocess/data_preprocess.py to convert the JSON files to the YOLO format:
+## Dataset Preparation
+
+```bash
+# Extract images from JSON files
+python data_preprocess/data_preprocess.py --task extract --json-dir /path/to/json/files --save-dir /path/to/images
+
+# Convert JSON annotations to YOLO format
+python data_preprocess/data_preprocess.py --task convert --json-dir /path/to/json/files --save-dir /path/to/labels
+
+# Process and interpolate keypoints
+python data_preprocess/data_preprocess.py --task process --json-dir /path/to/json/files --save-dir /path/to/processed
+
+# Or run all tasks at once
+python data_preprocess/data_preprocess.py --task all --json-dir /path/to/json/files --save-dir /path/to/output --extract-dir /path/to/images --convert-dir /path/to/labels --process-dir /path/to/processed
+
+```
+
+
 ## Install
 
 ```bash
@@ -14,7 +33,7 @@ cd PFLO
 pip install ultralytics
 
 ```
-## Dataset Preparation
+## Dataset Format
 ```bash
 maize pose dataset
 ├── images
@@ -65,6 +84,6 @@ if __name__ == '__main__':
                 show_boxes=False,
                 show_labels=False,
                 project='EXP1',
-                name='R1'
+                name='Stage_R1'
                 )
 ```

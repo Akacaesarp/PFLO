@@ -69,10 +69,10 @@ if __name__ == '__main__':
 ## Inference
 ```bash
 # Run inference on an image
-python predict.py --weights weights/PFLO.pt --source /path/to/image.jpg --save-txt --save-conf
+python predict.py --weights weights/PFLO.pt --source /path/to/image.jpg 
 
 # Run inference on a directory of images
-python predict.py --weights weights/PFLO.pt --source /path/to/image/folder --save-txt --save-conf
+python predict.py --weights weights/PFLO.pt --source /path/to/image/folder
 ```
 or you can just run predict.py
 ```bash

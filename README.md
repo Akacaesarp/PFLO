@@ -21,7 +21,8 @@ python data_preprocess/data_preprocess.py --task process --json-dir /path/to/jso
 python data_preprocess/data_preprocess.py --task all --json-dir /path/to/json/files --save-dir /path/to/output --extract-dir /path/to/images --convert-dir /path/to/labels --process-dir /path/to/processed
 
 ```
-
+## Download Weights
+Download the PPF-YOLO.pt weights file from the [Releases](https://github.com/Akacaesarp/PFLO/releases)
 
 ## Install
 
